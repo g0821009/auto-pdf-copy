@@ -1,5 +1,6 @@
-﻿'version 1.00 2014.9.9.1103 first Release
-'version 1.01 2014.9.9.1613 各エラー処理追記
+﻿'version 1.00 2014.09.09.1103 first Release
+'version 1.01 2014.09.09.1613 各エラー処理追記
+'version 1.02 2014.09.10.0901 メッセージ変更
 
 Imports System.IO
 
@@ -38,6 +39,7 @@ Module Module1
         End If
         Dim files As String()
         'コピー元のディレクトリにあるファイルをコピー
+        Console.WriteLine("searching filenames...")
         Try
             files = Directory.GetFiles(sourceDirName, "*.pdf", SearchOption.TopDirectoryOnly)
         Catch ex As Exception
@@ -45,7 +47,7 @@ Module Module1
             Console.WriteLine("ネットに繋がっていません")
             Environment.Exit(0)
         End Try
-        Console.WriteLine("get file name finished")
+        Console.WriteLine("search filenames finished")
         Dim f As String
         Dim i As Long = 0
         Dim maxDim As Long = UBound(files)
